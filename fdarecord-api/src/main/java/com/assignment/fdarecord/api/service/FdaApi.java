@@ -22,21 +22,6 @@ public class FdaApi {
         if (!StringUtils.isEmpty(manufacturerName) && !StringUtils.isEmpty(brandName)) {
             throw new FdaApiSearchException();
         }
-//        UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(FDA_URL);
-//        Map<String, String> params = new HashMap<>();
-//
-//        if (!StringUtils.isEmpty(manufacturerName)) {
-//            addOperationToSearchRequest(OperationKey.MANUFACTURER_NAME.name, manufacturerName, params, exact);
-//        }
-//        if (!StringUtils.isEmpty(brandName)) {
-//            addOperationToSearchRequest(OperationKey.BRAND_NAME.name, brandName, params, exact);
-//        }
-//
-//        addPaginationToFdaRequest(pageNo, pageSize, params);
-//        addParametersToURI(builder, params);
-//
-//        return restTemplate.getForObject(builder.build().toUri(),
-//                FdaResponseDTO.class);
         if (!StringUtils.isEmpty(manufacturerName)) {
             return queryFdaApi(getOperationValue(OperationKey.MANUFACTURER_NAME.name, exact), manufacturerName, null, pageNo, pageSize);
         }
