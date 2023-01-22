@@ -1,0 +1,250 @@
+{
+	"info": {
+		"_postman_id": "f81acb84-90df-4bdb-9e75-11b37c340a91",
+		"name": "fda",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create_fdarecord",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"applicationNumber\":\"ANDA076393\",\r\n    \"manufacturerName\":\"WATSON LABS\",\r\n    \"substanceName\":\"WATSON LABS\",\r\n    \"productNumbers\":[\"001\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/fda/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"fda",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_fdarecord",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"applicationNumber\":\"ANDA076393\",\r\n    \"manufacturerName\":\"WATSON LABS\",\r\n    \"substanceName\":\"WATSON LABS\",\r\n    \"productNumbers\":[\"001\", \"002\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/fda/update/ANDA076393",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"fda",
+						"update",
+						"ANDA076393"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_fdarecord",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/fda/delete/1234",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"fda",
+						"delete",
+						"1234"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search_records",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/fda/search_api_records?page_no=1&page_size=1&brand_name=TRIAMCINOLONE ACETONIDE&exact=true",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"fda",
+						"search_api_records"
+					],
+					"query": [
+						{
+							"key": "page_no",
+							"value": "1"
+						},
+						{
+							"key": "page_size",
+							"value": "1"
+						},
+						{
+							"key": "brand_name",
+							"value": "TRIAMCINOLONE ACETONIDE"
+						},
+						{
+							"key": "exact",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "query_records",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/fda/query_api_records?page_no=3&page_size=3&products.route=topical",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"fda",
+						"query_api_records"
+					],
+					"query": [
+						{
+							"key": "page_no",
+							"value": "3"
+						},
+						{
+							"key": "page_size",
+							"value": "3"
+						},
+						{
+							"key": "count_param_name",
+							"value": "sponsor_name",
+							"disabled": true
+						},
+						{
+							"key": "products.route",
+							"value": "topical"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "local_records",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/fda/local_api_records",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"fda",
+						"local_api_records"
+					],
+					"query": [
+						{
+							"key": "count_param_name",
+							"value": "sponsor_name",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "local_record",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/fda/local_api_records/ANDA0763933",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"fda",
+						"local_api_records",
+						"ANDA0763933"
+					],
+					"query": [
+						{
+							"key": "count_param_name",
+							"value": "sponsor_name",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "record events",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/fda/ANDA076393/events",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"fda",
+						"ANDA076393",
+						"events"
+					],
+					"query": [
+						{
+							"key": "count_param_name",
+							"value": "sponsor_name",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

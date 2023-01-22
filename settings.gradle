@@ -1,0 +1,6 @@
+rootProject.name = 'fdarecord'
+include 'fdarecord-query'
+include 'fdarecord-domain'
+include 'fdarecord-api'
+include 'fdarecord-command'
+
