@@ -1,0 +1,12 @@
+# Project exclude paths
+/.gradle/
+/fdarecord-api/build/
+/fdarecord-api/build/classes/java/main/
+/fdarecord-api/build/classes/java/test/
+/fdarecord-command/build/
+/fdarecord-command/build/classes/java/main/
+/fdarecord-domain/build/
+/fdarecord-domain/build/classes/java/main/
+/fdarecord-domain/build/classes/java/test/
+/fdarecord-query/build/
+/fdarecord-query/build/classes/java/main/
